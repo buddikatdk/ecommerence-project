@@ -1,0 +1,201 @@
+[
+  {
+    "ProductName": "Angular Speedster Board 2000",
+    "ProductDescription": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Maecenas porttitor congue massa. Fusce posuere, magna sed pulvinar ultricies, purus lectus malesuada libero, sit amet commodo magna eros quis urna.",
+    "Specification":"not updated yet",
+    "Price": 200,
+    "Quentity": 25,
+    "CreatedDate": "2019-01-06T17:16:40",
+    "ProductRegion":"Local",
+    "CategoryId": 1,
+    "BrandId":1
+  },
+  {
+    "ProductName": "Green Angular Board 3000",
+    "ProductDescription": "Nunc viverra imperdiet enim. Fusce est. Vivamus a tellus.",
+    "Specification":"not updated yet",
+    "Price": 150,
+    "Quentity": 25,
+    "CreatedDate": "2019-01-06T17:16:40",
+    "ProductRegion":"Local",
+    "CategoryId": 1,
+    "BrandId":1
+  },
+  {
+    "ProductName": "Core Board Speed Rush 3",
+    "ProductDescription": "Suspendisse dui purus, scelerisque at, vulputate vitae, pretium mattis, nunc. Mauris eget neque at sem venenatis eleifend. Ut nonummy.",
+    "Specification":"not updated yet",
+    "Price": 180,
+    "Quentity": 25,
+    "CreatedDate": "2019-01-06T17:16:40",
+    "ProductRegion":"Local",
+    "CategoryId": 1,
+    "BrandId":2
+  },
+  {
+    "ProductName": "Net Core Super Board",
+    "ProductDescription": "Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Proin pharetra nonummy pede. Mauris et orci.",
+    "Specification":"not updated yet",
+    "Price": 300,
+    "Quentity": 25,
+    "CreatedDate": "2019-01-06T17:16:40",
+    "ProductRegion":"Local",
+    "CategoryId": 1,
+    "BrandId":2
+  },
+  {
+    "ProductName": "React Board Super Whizzy Fast",
+    "ProductDescription": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Maecenas porttitor congue massa. Fusce posuere, magna sed pulvinar ultricies, purus lectus malesuada libero, sit amet commodo magna eros quis urna.",
+    "Specification":"not updated yet",
+    "Price": 250,
+    "Quentity": 25,
+    "CreatedDate": "2019-01-06T17:16:40",
+    "ProductRegion":"Local",
+    "CategoryId": 2,
+    "BrandId":4
+  },
+  {
+    "ProductName": "Typescript Entry Board",
+    "ProductDescription": "Aenean nec lorem. In porttitor. Donec laoreet nonummy augue.",
+    "Specification":"not updated yet",
+    "Price": 120,
+    "Quentity": 25,
+    "CreatedDate": "2019-01-06T17:16:40",
+    "ProductRegion":"Local",
+    "CategoryId": 2,
+    "BrandId":5
+  },
+  {
+    "ProductName": "Core Blue Hat",
+    "ProductDescription": "Fusce posuere, magna sed pulvinar ultricies, purus lectus malesuada libero, sit amet commodo magna eros quis urna.",
+    "Specification":"not updated yet",
+    "Price": 10,
+    "Quentity": 25,
+    "CreatedDate": "2019-01-06T17:16:40",
+    "ProductRegion":"Local",
+    "CategoryId": 2,
+    "BrandId":2
+  },
+  {
+    "ProductName": "Green React Woolen Hat",
+    "ProductDescription": "Suspendisse dui purus, scelerisque at, vulputate vitae, pretium mattis, nunc. Mauris eget neque at sem venenatis eleifend. Ut nonummy.",
+    "Specification":"not updated yet",
+    "Price": 8,
+    "Quentity": 25,
+    "CreatedDate": "2019-01-06T17:16:40",
+    "ProductRegion":"Local",
+    "CategoryId": 3,
+    "BrandId":4
+  },
+  {
+    "ProductName": "Purple React Woolen Hat",
+    "ProductDescription": "Fusce posuere, magna sed pulvinar ultricies, purus lectus malesuada libero, sit amet commodo magna eros quis urna.",
+    "Specification":"not updated yet",
+    "Price": 15,
+    "Quentity": 25,
+    "CreatedDate": "2019-01-06T17:16:40",
+    "ProductRegion":"Local",
+    "CategoryId": 1,
+    "BrandId":4
+  },
+  {
+    "ProductName": "Blue Code Gloves",
+    "ProductDescription": "Nunc viverra imperdiet enim. Fusce est. Vivamus a tellus.",
+    "Specification":"not updated yet",
+    "Price": 18,
+    "Quentity": 25,
+    "CreatedDate": "2019-01-06T17:16:40",
+    "ProductRegion":"Local",
+    "CategoryId": 4,
+    "BrandId":3
+  },
+  {
+    "ProductName": "Green Code Gloves",
+    "ProductDescription": "Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Proin pharetra nonummy pede. Mauris et orci.",
+    "Specification":"not updated yet",
+    "Price": 15,
+    "Quentity": 25,
+    "CreatedDate": "2019-01-06T17:16:40",
+    "ProductRegion":"Local",
+    "CategoryId": 4,
+    "BrandId":3
+  },
+  {
+    "ProductName": "Purple React Gloves",
+    "ProductDescription": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Maecenas porttitor congue massa.",
+    "Specification":"not updated yet",
+    "Price": 16,
+    "Quentity": 25,
+    "CreatedDate": "2019-01-06T17:16:40",
+    "ProductRegion":"Local",
+    "CategoryId": 4,
+    "BrandId":4
+
+  },
+  {
+    "ProductName": "Green React Gloves",
+    "ProductDescription": "Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Proin pharetra nonummy pede. Mauris et orci.",
+    "Specification":"not updated yet",
+    "Price": 14,
+    "Quentity": 25,
+    "CreatedDate": "2019-01-06T17:16:40",
+    "ProductRegion":"Local",
+    "CategoryId": 4,
+    "BrandId":4
+  },
+  {
+    "ProductName": "Redis Red Boots",
+    "ProductDescription": "Suspendisse dui purus, scelerisque at, vulputate vitae, pretium mattis, nunc. Mauris eget neque at sem venenatis eleifend. Ut nonummy.",
+    "Specification":"not updated yet",
+    "Price": 250,
+    "Quentity": 25,
+    "CreatedDate": "2019-01-06T17:16:40",
+    "ProductRegion":"Local",
+    "CategoryId": 3,
+    "BrandId":6
+  },
+  {
+    "ProductName": "Core Red Boots",
+    "ProductDescription": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Maecenas porttitor congue massa. Fusce posuere, magna sed pulvinar ultricies, purus lectus malesuada libero, sit amet commodo magna eros quis urna.",
+    "Specification":"not updated yet",
+    "Price": 189.99,
+    "Quentity": 25,
+    "CreatedDate": "2019-01-06T17:16:40",
+    "ProductRegion":"Local",
+    "CategoryId": 3,
+    "BrandId":2
+  },
+  {
+    "ProductName": "Core Purple Boots",
+    "ProductDescription": "Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Proin pharetra nonummy pede. Mauris et orci.",
+    "Specification":"not updated yet",
+    "Price": 199.99,
+    "Quentity": 25,
+    "CreatedDate": "2019-01-06T17:16:40",
+    "ProductRegion":"Local",
+    "CategoryId": 2,
+    "BrandId":2
+  },
+  {
+    "ProductName": "Angular Purple Boots",
+    "ProductDescription": "Aenean nec lorem. In porttitor. Donec laoreet nonummy augue.",
+    "Specification":"not updated yet",
+    "Price": 150,
+    "Quentity": 25,
+    "CreatedDate": "2019-01-06T17:16:40",
+    "ProductRegion":"Local",
+    "CategoryId": 3,
+    "BrandId":1
+  },
+  {
+    "ProductName": "Angular Blue Boots",
+    "ProductDescription": "Suspendisse dui purus, scelerisque at, vulputate vitae, pretium mattis, nunc. Mauris eget neque at sem venenatis eleifend. Ut nonummy.",
+    "Specification":"not updated yet",
+    "Price": 180,
+    "Quentity": 25,
+    "CreatedDate": "2019-01-06T17:16:40",
+    "ProductRegion":"Local",
+    "CategoryId": 3,
+    "BrandId":1
+  }
+]
