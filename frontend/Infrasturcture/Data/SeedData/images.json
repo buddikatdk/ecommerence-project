@@ -1,32 +1,32 @@
 [
     {
       "Id": 1,
-      "ImagesPath": "Images/Angular",
+      "ImagesPath": "Images/products/boot-ang1.png",
       "ProductId":1
     },
     {
       "Id": 2,
-      "ImagesPath": "images/NetCore",
+      "ImagesPath": "images/products/boot-ang2.png",
       "ProductId":8
     },
     {
       "Id": 3,
-      "ImagesPath": "Images/VS Code",
+      "ImagesPath": "Images/products/boot-ang1.png",
       "ProductId":5
     },
     {
       "Id": 4,
-      "ImagesPath": "Images/React",
+      "ImagesPath": "Images/products/boot-ang1.png",
       "ProductId":1
     },
     {
       "Id": 5,
-      "ImagesPath": "Images/Typescript",
+      "ImagesPath": "Images/products/boot-ang1.png",
       "ProductId":3
     },
     {
       "Id": 6,
-      "ImagesPath": "Images/Redis",
+      "ImagesPath": "Images/products/boot-ang2.png",
       "ProductId":2
     }
   ]
