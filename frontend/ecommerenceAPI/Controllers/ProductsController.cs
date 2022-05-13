@@ -2,8 +2,11 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using AutoMapper;
 using Core.Entities;
 using Core.Interfaces;
+using Core.Specifications;
+using ecommerenceAPI.Dtos;
 using Infrasturcture.Data;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -14,35 +17,64 @@ namespace ecommerenceAPI.Controllers
     [Route("api/[controller]")]
     public class ProductsController : ControllerBase
     {
-        private readonly IProductRepository _repository;
-        public ProductsController(IProductRepository repository)
+        public IGenericRepository<Product> _productsRepository;
+        public IGenericRepository<Brand> _brandRepository;
+        private readonly IGenericRepository<SubCategory> _subCategoryRepository;
+        public IGenericRepository<Category> _categoryRepository;
+        public IGenericRepository<Images> _imagesRepository;
+        public IMapper _mapper;
+        public ProductsController(IGenericRepository<Product> productsRepository, IGenericRepository<Brand> brandRepository, IGenericRepository<SubCategory> subCategoryRepository, IGenericRepository<Category> categoryRepository, IGenericRepository<Images> imagesRepository, IMapper mapper)
         {
-            _repository = repository;
+            _mapper = mapper;
+            _imagesRepository = imagesRepository;
+            _categoryRepository = categoryRepository;
+            _subCategoryRepository = subCategoryRepository;
+            _brandRepository = brandRepository;
+            _productsRepository = productsRepository;
         }
 
         [HttpGet]
-        public async Task<ActionResult<List<Product>>> GetProducts()
+        public async Task<ActionResult<IReadOnlyList<ProductToReturnDto>>> GetProducts()
         {
-            var products = await _repository.GetProductsAsync();
-            return Ok(products);
+            var spec = new ProductsWithTypesAndBrandsAndCategoriesSpecification();
+            var products = await _productsRepository.ListAsync(spec);
+            return Ok(_mapper.Map<IReadOnlyList<Product>, IReadOnlyList<ProductToReturnDto>>(products));
         }
 
         [HttpGet("{id}")]
-        public async Task<ActionResult<Product>> GetProduct(int id)
+        public async Task<ActionResult<ProductToReturnDto>> GetProduct(int id)
         {
-            return await _repository.GetProductByIdAsync(id);
+            var spec = new ProductsWithTypesAndBrandsAndCategoriesSpecification(id);
+            var product = await _productsRepository.GetEntityWithSpec(spec);
+            return _mapper.Map<Product, ProductToReturnDto>(product);
         }
 
         [HttpGet("brands")]
         public async Task<ActionResult<IReadOnlyList<Brand>>> GetBrands()
         {
-            return Ok(await _repository.GetBrandsAsync());
+            return Ok(await _brandRepository.ListAllAsync());
+        }
+
+        [HttpGet("images")]
+        public async Task<ActionResult<IReadOnlyList<Images>>> GetImages()
+        {
+            var spec = new ImagesWithProductSpecification();
+            var images = await _imagesRepository.ListAsync(spec);
+            return Ok(_mapper.Map<IReadOnlyList<Images>, IReadOnlyList<ImageToReturnDto>>(images));
         }
 
         [HttpGet("categories")]
         public async Task<ActionResult<IReadOnlyList<Category>>> GetCategories()
         {
-            return Ok(await _repository.GetCategoriesAsync());
+            return Ok(await _categoryRepository.ListAllAsync());
+        }
+
+        [HttpGet("subcategories")]
+        public async Task<ActionResult<IReadOnlyList<SubCategory>>> GetSubCategories()
+        {
+            var spec = new CategoryWithSubCategoriesSpecification();
+            var subcategories = await _subCategoryRepository.ListAsync(spec);
+            return Ok(_mapper.Map<IReadOnlyList<SubCategory>, IReadOnlyList<SubCategoryToReturnDto>>(subcategories));
         }
     }
 }

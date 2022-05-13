@@ -42,7 +42,7 @@ namespace Infrasturcture.Data
                     await context.SaveChangesAsync();
                 }
 
-              /* if(!context.SubCategories.Any())
+               if(!context.SubCategories.Any())
                 {
                     var subCategoriesData = File.ReadAllText("../Infrasturcture/Data/SeedData/subcategories.json");
 
@@ -54,7 +54,21 @@ namespace Infrasturcture.Data
                     }
 
                     await context.SaveChangesAsync();
-                }*/
+                }
+
+                if(!context.Images.Any())
+                {
+                    var imagesData = File.ReadAllText("../Infrasturcture/Data/SeedData/images.json");
+
+                    var images = JsonSerializer.Deserialize<List<Images>>(imagesData);
+
+                    foreach(var item in images)
+                    {
+                        context.Images.Add(item);
+                    }
+
+                    await context.SaveChangesAsync();
+                }
 
                 if(!context.Products.Any())
                 {

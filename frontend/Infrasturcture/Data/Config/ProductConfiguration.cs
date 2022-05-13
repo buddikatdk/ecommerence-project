@@ -22,7 +22,7 @@ namespace Infrasturcture.Data.Config
            // builder.Property(p=>p.SubCategory).HasMaxLength(150);
             builder.Property(p=>p.ProductRegion).HasMaxLength(50);
             builder.HasOne(b=>b.Brand).WithMany().HasForeignKey(p=>p.BrandId);
-            builder.HasOne(c=>c.Category).WithMany().HasForeignKey(p=>p.CategoryId);
+            builder.HasOne(c=>c.SubCategory).WithMany().HasForeignKey(p=>p.SubCategoryId);
            // builder.HasOne(s=>s.SubCategory).WithMany().HasForeignKey(p=>p.SubCategoryId);
 
         }

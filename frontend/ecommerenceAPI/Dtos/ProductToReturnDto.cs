@@ -3,10 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace Core.Entities
+namespace ecommerenceAPI.Dtos
 {
-    public class Product : BaseEntity
+    public class ProductToReturnDto
     {
+        public int Id { get; set; }
         public string ProductName { get; set; }
         public string ProductDescription { get; set; }
         public string Specification { get; set; }
@@ -14,9 +15,9 @@ namespace Core.Entities
         public int Quentity {get; set;}
         public DateTime CreatedDate {get; set;}
         public string ProductRegion {get; set;}
-        public SubCategory SubCategory {get; set;}
-        public int SubCategoryId {get; set;}
-        public Brand Brand {get; set;}
-        public int BrandId {get; set;}
+        //public string Category {get; set;}
+        public string SubCategory {get; set;}
+       // public int SubCategoryId {get; set;}
+        public string Brand {get; set;}
     }
 }

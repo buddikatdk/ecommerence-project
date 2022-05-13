@@ -7,7 +7,7 @@
     "Quentity": 25,
     "CreatedDate": "2019-01-06T17:16:40",
     "ProductRegion":"Local",
-    "CategoryId": 1,
+    "SubCategoryId": 1,
     "BrandId":1
   },
   {
@@ -18,7 +18,7 @@
     "Quentity": 25,
     "CreatedDate": "2019-01-06T17:16:40",
     "ProductRegion":"Local",
-    "CategoryId": 1,
+    "SubCategoryId": 1,
     "BrandId":1
   },
   {
@@ -29,7 +29,7 @@
     "Quentity": 25,
     "CreatedDate": "2019-01-06T17:16:40",
     "ProductRegion":"Local",
-    "CategoryId": 1,
+    "SubCategoryId": 1,
     "BrandId":2
   },
   {
@@ -40,7 +40,7 @@
     "Quentity": 25,
     "CreatedDate": "2019-01-06T17:16:40",
     "ProductRegion":"Local",
-    "CategoryId": 1,
+    "SubCategoryId": 1,
     "BrandId":2
   },
   {
@@ -51,7 +51,7 @@
     "Quentity": 25,
     "CreatedDate": "2019-01-06T17:16:40",
     "ProductRegion":"Local",
-    "CategoryId": 2,
+    "SubCategoryId": 2,
     "BrandId":4
   },
   {
@@ -62,7 +62,7 @@
     "Quentity": 25,
     "CreatedDate": "2019-01-06T17:16:40",
     "ProductRegion":"Local",
-    "CategoryId": 2,
+    "SubCategoryId": 2,
     "BrandId":5
   },
   {
@@ -73,7 +73,7 @@
     "Quentity": 25,
     "CreatedDate": "2019-01-06T17:16:40",
     "ProductRegion":"Local",
-    "CategoryId": 2,
+    "SubCategoryId": 2,
     "BrandId":2
   },
   {
@@ -84,7 +84,7 @@
     "Quentity": 25,
     "CreatedDate": "2019-01-06T17:16:40",
     "ProductRegion":"Local",
-    "CategoryId": 3,
+    "SubCategoryId": 3,
     "BrandId":4
   },
   {
@@ -95,7 +95,7 @@
     "Quentity": 25,
     "CreatedDate": "2019-01-06T17:16:40",
     "ProductRegion":"Local",
-    "CategoryId": 1,
+    "SubCategoryId": 1,
     "BrandId":4
   },
   {
@@ -106,7 +106,7 @@
     "Quentity": 25,
     "CreatedDate": "2019-01-06T17:16:40",
     "ProductRegion":"Local",
-    "CategoryId": 4,
+    "SubCategoryId": 4,
     "BrandId":3
   },
   {
@@ -117,7 +117,7 @@
     "Quentity": 25,
     "CreatedDate": "2019-01-06T17:16:40",
     "ProductRegion":"Local",
-    "CategoryId": 4,
+    "SubCategoryId": 4,
     "BrandId":3
   },
   {
@@ -128,7 +128,7 @@
     "Quentity": 25,
     "CreatedDate": "2019-01-06T17:16:40",
     "ProductRegion":"Local",
-    "CategoryId": 4,
+    "SubCategoryId": 4,
     "BrandId":4
 
   },
@@ -140,7 +140,7 @@
     "Quentity": 25,
     "CreatedDate": "2019-01-06T17:16:40",
     "ProductRegion":"Local",
-    "CategoryId": 4,
+    "SubCategoryId": 4,
     "BrandId":4
   },
   {
@@ -151,7 +151,7 @@
     "Quentity": 25,
     "CreatedDate": "2019-01-06T17:16:40",
     "ProductRegion":"Local",
-    "CategoryId": 3,
+    "SubCategoryId": 3,
     "BrandId":6
   },
   {
@@ -162,7 +162,7 @@
     "Quentity": 25,
     "CreatedDate": "2019-01-06T17:16:40",
     "ProductRegion":"Local",
-    "CategoryId": 3,
+    "SubCategoryId": 3,
     "BrandId":2
   },
   {
@@ -173,7 +173,7 @@
     "Quentity": 25,
     "CreatedDate": "2019-01-06T17:16:40",
     "ProductRegion":"Local",
-    "CategoryId": 2,
+    "SubCategoryId": 2,
     "BrandId":2
   },
   {
@@ -184,7 +184,7 @@
     "Quentity": 25,
     "CreatedDate": "2019-01-06T17:16:40",
     "ProductRegion":"Local",
-    "CategoryId": 3,
+    "SubCategoryId": 3,
     "BrandId":1
   },
   {
@@ -195,7 +195,7 @@
     "Quentity": 25,
     "CreatedDate": "2019-01-06T17:16:40",
     "ProductRegion":"Local",
-    "CategoryId": 3,
+    "SubCategoryId": 3,
     "BrandId":1
   }
 ]

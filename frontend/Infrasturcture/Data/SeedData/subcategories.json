@@ -1,18 +1,22 @@
 [
   {
     "Id": 1,
-    "Name": "Boards"
+    "SubCategoryName": "Boards",
+    "CategoryId":1
   },
   {
     "Id": 2,
-    "Name": "Hats"
+    "SubCategoryName": "Hats",
+    "CategoryId":1
   },
   {
     "Id": 3,
-    "Name": "Boots"
+    "SubCategoryName": "Boots",
+    "CategoryId":1
   },
   {
     "Id": 4,
-    "Name": "Gloves"
+    "SubCategoryName": "Gloves",
+    "CategoryId":2
   }
 ]
