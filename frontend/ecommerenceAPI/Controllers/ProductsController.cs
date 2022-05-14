@@ -8,6 +8,7 @@ using Core.Interfaces;
 using Core.Specifications;
 using ecommerenceAPI.Dtos;
 using ecommerenceAPI.Errors;
+using ecommerenceAPI.Helpers;
 using Infrasturcture.Data;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -34,11 +35,14 @@ namespace ecommerenceAPI.Controllers
         }
 
         [HttpGet]
-        public async Task<ActionResult<IReadOnlyList<ProductToReturnDto>>> GetProducts()
+        public async Task<ActionResult<Pagination<ProductToReturnDto>>> GetProducts([FromQuery]ProductSpecParams productSpecParams)
         {
-            var spec = new ProductsWithTypesAndBrandsAndCategoriesSpecification();
+            var spec = new ProductsWithTypesAndBrandsAndCategoriesSpecification(productSpecParams);
+            var countSpec = new ProductWithFilterCountSpec(productSpecParams);
+            var totalItems = await _productsRepository.CountAsync(countSpec);
             var products = await _productsRepository.ListAsync(spec);
-            return Ok(_mapper.Map<IReadOnlyList<Product>, IReadOnlyList<ProductToReturnDto>>(products));
+            var data = _mapper.Map<IReadOnlyList<Product>, IReadOnlyList<ProductToReturnDto>>(products);
+            return Ok(new Pagination<ProductToReturnDto>(productSpecParams.PageIndex,productSpecParams.PageSize, totalItems, data));
         }
 
         [HttpGet("{id}")]
