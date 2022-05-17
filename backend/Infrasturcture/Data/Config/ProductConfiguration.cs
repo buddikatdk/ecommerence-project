@@ -17,14 +17,9 @@ namespace Infrasturcture.Data.Config
             builder.Property(p=>p.Specification).IsRequired().HasMaxLength(200);
             builder.Property(p=>p.ProductDescription).IsRequired().HasMaxLength(500);
             builder.Property(p=>p.Price).IsRequired().HasColumnType("decimal(18,2)");
-           // builder.Property(p=>p.Category).HasMaxLength(150);
-           // builder.Property(p=>p.Brand).HasMaxLength(150);
-           // builder.Property(p=>p.SubCategory).HasMaxLength(150);
             builder.Property(p=>p.ProductRegion).HasMaxLength(50);
             builder.HasOne(b=>b.Brand).WithMany().HasForeignKey(p=>p.BrandId);
             builder.HasOne(c=>c.SubCategory).WithMany().HasForeignKey(p=>p.SubCategoryId);
-           // builder.HasOne(s=>s.SubCategory).WithMany().HasForeignKey(p=>p.SubCategoryId);
-
         }
     }
 }
