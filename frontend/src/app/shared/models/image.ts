@@ -1,6 +1,6 @@
-/*export interface IImage {
+export interface IImage {
   id: number;
   imagesPath: string;
-  product: Product;
+  product: object;
   productId: number;
-}*/
+}

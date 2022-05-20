@@ -1,0 +1,193 @@
+<!-- <ul>
+  <li class="list-unstyled" *ngFor="let product of products">
+    {{product.productName}}
+  </li>
+</ul> -->
+<br /><br /><br /><br /><br />
+<div class="maincontent-area">
+  <div class="container">
+    <div class="single-pro pro">
+      <div class="row">
+        <div class="col-md-2 col-sm-2">
+          <div class="single-sidebar"
+            style="margin-left:20px; margin-top:20px; margin-bottom: 20px; margin-right: 20px;">
+            <div class="sidebar-tile">
+              <h2 class="sidebar-title">Categories</h2>
+              <ul *ngFor="let category of categories" class="thubmnail-recent nolist">
+                <li [class.active]="category.id === this.shopParams.categoryId" [value]="category.id"
+                  (click)="onCategorySelected(category.id)">{{category.categoryName}}</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-8 col-sm-8" style="margin:auto;">
+          <!-- <div class="row">
+              <div class="col-md-8 py-4" style="margin:auto;"> -->
+          <ngb-carousel *ngIf="event_list">
+            <ng-template ngbSlide *ngFor="let event of past_events">
+              <img [src]="event.img" alt="Random slide"
+                style="width: 100%; height: 250px; border-radius: 15px; margin-top: 20px;">
+              <div class="carousel-caption">
+                <h3>{{ event.eventLocation }}</h3>
+                <p [innerText]="event.eventDescription"></p>
+              </div>
+            </ng-template>
+          </ngb-carousel>
+          <!-- </div>
+            </div> -->
+          <!-- Slider -->
+          <!-- <div class="slider-area">
+              <div class="block-slider block-slider4">
+                  <ul class="" id="bxslider-home4">
+                      <li>
+                          <img src="/assets/images/DealsNowLocal.png" id="s-image" alt="Slide">
+                          <div class="caption-group">
+                              <h2 class="caption title">
+                                  Fresh <span class="primary">Everyday <strong>Products</strong></span>
+                              </h2>
+                              <h4 class="caption subtitle">From DealsNow Local</h4>
+                              <a class="caption button-radius" href="#"><span class="icon"></span>Shop now</a>
+                          </div>
+                      </li>
+                      <li>
+                          <img src="/assets/images/DealsNowLocal.png" id="s-image" alt="Slide">
+                          <div class="caption-group">
+                              <h2 class="caption title">
+                                  iPhone <span class="primary">6 <strong>Plus</strong></span>
+                              </h2>
+                              <h4 class="caption subtitle">Dual SIM</h4>
+                              <a class="caption button-radius" href="#"><span class="icon"></span>Shop now</a>
+                          </div>
+                      </li>
+                      <li>
+                          <img src="/assets/images/DealsNowLocal.png" id="s-image" alt="Slide">
+                          <div class="caption-group">
+                              <h2 class="caption title">
+                                  by one, get one <span class="primary">50% <strong>off</strong></span>
+                              </h2>
+                              <h4 class="caption subtitle">school supplies & backpacks.*</h4>
+                              <a class="caption button-radius" href="#"><span class="icon"></span>Shop now</a>
+                          </div>
+                      </li>
+                      <li>
+                          <img src="/assets/images/DealsNowLocal.png" id="s-image" alt="Slide">
+                          <div class="caption-group">
+                              <h2 class="caption title">
+                                  Apple <span class="primary">Store <strong>Ipod</strong></span>
+                              </h2>
+                              <h4 class="caption subtitle">Select Item</h4>
+                              <a class="caption button-radius" href="#"><span class="icon"></span>Shop now</a>
+                          </div>
+                      </li>
+                      <li>
+                          <img src="/assets/images/DealsNowLocal.png" id="s-image" alt="Slide">
+                          <div class="caption-group">
+                              <h2 class="caption title">
+                                  Apple <span class="primary">Store <strong>Ipod</strong></span>
+                              </h2>
+                              <h4 class="caption subtitle">& Phone</h4>
+                              <a class="caption button-radius" href="#"><span class="icon"></span>Shop now</a>
+                          </div>
+                      </li>
+                  </ul>
+              </div>
+          </div> -->
+        </div>
+        <div class="col-md-2 col-sm-2">
+          <div class="single-sidebar"
+            style="margin-left:20px; margin-top:20px; margin-bottom: 20px; margin-right: 20px;">
+            <div class="sidebar-tile">
+              <h2 class="sidebar-title">Top Brands</h2>
+              <ul *ngFor="let brand of brands" class="thubmnail-recent nolist">
+                <li [class.active]="brand.id === this.shopParams.brandId" [value]="brand.id"
+                  (click)="onBrandSelected(brand.id)">{{brand.brandName}}</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!------------------------------------------------------------------------------------------------------------------------------------>
+    <!------------------------------------------------------------------------------------------------------------------------------------>
+
+  </div> <!-- End promo area -->
+
+  <div class="promo-area">
+    <div class="zigzag-bottom"></div>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-3 col-sm-6">
+          <div class="single-promo promo1">
+            <i class="fa fa-refresh"></i>
+            <h5>Great value items</h5>
+            <h6>
+              There's always something on sale!
+            </h6>
+          </div>
+        </div>
+        <div class="col-md-3 col-sm-6">
+          <div class="single-promo promo2">
+            <i class="fa fa-truck"></i>
+            <h5>Worldwide delivery</h5>
+            <h6>
+              What you want, delivered to where you want
+            </h6>
+          </div>
+        </div>
+        <div class="col-md-3 col-sm-6">
+          <div class="single-promo promo3">
+            <i class="fa fa-lock"></i>
+            <h5>Safe payment</h5>
+            <h6>
+              Pay with the world's top payment methods
+            </h6>
+          </div>
+        </div>
+        <div class="col-md-3 col-sm-6">
+          <div class="single-promo promo4">
+            <i class="fa fa-money"></i>
+            <h5>Worry-free shopping</h5>
+            <h6>
+              Every order has Buyer Protection coverage
+            </h6>
+          </div>
+        </div>
+      </div>
+    </div> <!-- End promo area -->
+  </div> <!-- End permo content area -->
+
+  <div class="container">
+    <div class="row">
+      <!-- <section class="col-3">
+        Filters
+      </section> -->
+      <section class="col-12">
+        <section>
+          <div class="d-flex justify-content-between align-items-center pb-2">
+
+          <app-paging-header [totalCount]="this.totalCount" [pageSize]="this.shopParams.pageSize" [pageNumber]="this.shopParams.pageNumber"></app-paging-header>
+            <div class="form-inline mt-2">
+              <h5 class="text-warning ml-3">Sort &nbsp;&nbsp;&nbsp;<span> <select class="custom-select"
+                    style="width:250px; color: red;" (change)="onSortSelected($event.target.value)">
+                    <option *ngFor="let sort of sortOptions" [value]="sort.value">{{sort.name}}</option>
+                  </select>
+                </span></h5>
+              <input (keydown)="onSearch()" class="form-control mr-2" #search style="width: 300px;" placeholder="Search Here" type="text">
+              <!-- <button (click)="onSearch()" class="btn btn-outline-primary ml-2 my-2">search</button>
+              <button (click)="onReset()" class="btn btn-outline-success ml-2 my-2">reset</button> -->
+            </div>
+          </div>
+        </section>
+
+        <div class="row">
+          <div class="col-md-2" *ngFor="let item of products">
+            <app-product-item [product]="item"></app-product-item>
+          </div>
+        </div>
+        <div class="d-flex justify-content-center" *ngIf="this.totalCount !==0" style="margin-top: 20px">
+          <app-pagination [pageSize]="shopParams.pageSize" [totalCount]="totalCount" (pageChanged)="onPageChanged($event)"></app-pagination>
+        </div>
+      </section>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,16 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-8 py-3">
+      <h2 class="pb-2">Past Events</h2>
+      <ngb-carousel *ngIf="event_list">
+        <ng-template ngbSlide *ngFor="let event of past_events">
+          <img [src]="event.img" alt="Random slide" style="width: 100%;">
+          <div class="carousel-caption">
+            <h3>{{ event.eventLocation }}</h3>
+            <p [innerText]="event.eventDescription"></p>
+          </div>
+        </ng-template>
+      </ngb-carousel>
+    </div>
+  </div>
+</div>

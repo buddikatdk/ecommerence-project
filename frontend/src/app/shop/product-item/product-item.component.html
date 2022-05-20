@@ -1,0 +1,23 @@
+<div class="card shadow-lg p-2">
+  <div class="card-body p-1">
+    <div class="card">
+      <div class="card-img-wrapper">
+        <div *ngFor="let item of images">
+          <app-product-image-item [image]="item" *ngIf="item.id === product.id"></app-product-image-item>
+        </div>
+      <!-- <img *ngIf="!property.Image" id="imageProp" class="card-img-top" src="./assets/images/Homeimage.png"> -->
+        <div class="card-body p-2">
+        <p id="proname">{{product.productName}}</p>
+        <!-- <p id="protype">{{property.Type}}</p> -->
+        <p id="proprice">LKR. {{product.price}} only</p>
+          <div class="card-body">
+            <ul class="list-inline text-center member-icons">
+              <li class="list-inline-item" style="font-size:1vw;"><button id="btnc" class="btn"><i class="fa fa-shopping-cart"></i> Buy</button></li>
+              <!-- <li class="list-inline-item" style="font-size:1vw;"><button id = "btnc" class="btn" routerLink="/details-property/{{property.Id}}"><i class="fa-solid fa-heart"></i> View</button></li> -->
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
