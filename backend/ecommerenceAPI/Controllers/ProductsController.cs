@@ -73,6 +73,14 @@ namespace ecommerenceAPI.Controllers
             return Ok(_mapper.Map<IReadOnlyList<Images>, IReadOnlyList<ImageToReturnDto>>(images));
         }
 
+         [HttpGet("images/{id}")]
+        public async Task<ActionResult<IReadOnlyList<Images>>> GetProductImages(int id)
+        {
+            var spec = new ImagesWithProductSpecification(id);
+            var images = await _imagesRepository.ListAsync(spec);
+            return Ok(_mapper.Map<IReadOnlyList<Images>, IReadOnlyList<ImageToReturnDto>>(images));
+        }
+
         [HttpGet("categories")]
         public async Task<ActionResult<IReadOnlyList<Category>>> GetCategories()
         {

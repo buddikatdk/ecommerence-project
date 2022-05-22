@@ -62,7 +62,7 @@ namespace Infrasturcture.Data.Migrations
                     ProductName = table.Column<string>(type: "TEXT", maxLength: 150, nullable: false),
                     ProductDescription = table.Column<string>(type: "TEXT", maxLength: 500, nullable: false),
                     Specification = table.Column<string>(type: "TEXT", maxLength: 200, nullable: false),
-                    Price = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
+                    Price = table.Column<double>(type: "decimal(18,2)", nullable: false),
                     Quentity = table.Column<int>(type: "INTEGER", nullable: false),
                     CreatedDate = table.Column<DateTime>(type: "TEXT", nullable: false),
                     ProductRegion = table.Column<string>(type: "TEXT", maxLength: 50, nullable: true),

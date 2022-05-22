@@ -1,9 +1,3 @@
-<!-- <ul>
-  <li class="list-unstyled" *ngFor="let product of products">
-    {{product.productName}}
-  </li>
-</ul> -->
-<br /><br /><br /><br /><br />
 <div class="maincontent-area">
   <div class="container">
     <div class="single-pro pro">
@@ -13,9 +7,9 @@
             style="margin-left:20px; margin-top:20px; margin-bottom: 20px; margin-right: 20px;">
             <div class="sidebar-tile">
               <h2 class="sidebar-title">Categories</h2>
-              <ul *ngFor="let category of categories" class="thubmnail-recent nolist">
-                <li [class.active]="category.id === this.shopParams.categoryId" [value]="category.id"
-                  (click)="onCategorySelected(category.id)">{{category.categoryName}}</li>
+              <ul routerLinkActive="activate" *ngFor="let category of categories" class="thubmnail-recent nolist">
+                <li routerLinkActive="activate" [class.active]="category.id === this.shopParams.categoryId"
+                  [value]="category.id" (click)="onCategorySelected(category.id)">{{category.categoryName}}</li>
               </ul>
             </div>
           </div>
@@ -98,8 +92,8 @@
             style="margin-left:20px; margin-top:20px; margin-bottom: 20px; margin-right: 20px;">
             <div class="sidebar-tile">
               <h2 class="sidebar-title">Top Brands</h2>
-              <ul *ngFor="let brand of brands" class="thubmnail-recent nolist">
-                <li [class.active]="brand.id === this.shopParams.brandId" [value]="brand.id"
+              <ul routerLinkActive="activate" *ngFor="let brand of brands" class="thubmnail-recent nolist">
+                <li routerLinkActive="activate" [class.active]="brand.id === this.shopParams.brandId" [value]="brand.id"
                   (click)="onBrandSelected(brand.id)">{{brand.brandName}}</li>
               </ul>
             </div>
@@ -162,30 +156,49 @@
         Filters
       </section> -->
       <section class="col-12">
+
+        <div *ngIf="!this.shopParams.categoryId" class="container" style="margin-bottom:50px;padding-bottom:5px;width:100%">
+          <div class="row">
+            <div class="col-md-1.5 col-sm-3" style="margin-bottom:5px;" *ngFor="let item of subcategories">
+            <div  class="single-promo promo4" style="background-color: #1BD172; border-radius: 0 30px 0 30px">
+              <h5><a style="color:#ffffff; font-weight:bolder;" href="">{{item.subCategoryName}}</a></h5>
+            </div>
+            </div>
+          </div>
+          <!-- <div class="col-md-1.5 col-sm-3" style="margin-bottom:5px;">
+            <div class="single-promo promo4" style="background-color: #1BD172; border-radius: 0 30px 0 30px">
+              <h5><a style="color: #ffffff; font-weight: bolder;" href="">@item.subCategoryName</a></h5>
+            </div>
+          </div> -->
+        </div>
+
         <section>
           <div class="d-flex justify-content-between align-items-center pb-2">
 
-          <app-paging-header [totalCount]="this.totalCount" [pageSize]="this.shopParams.pageSize" [pageNumber]="this.shopParams.pageNumber"></app-paging-header>
+            <app-paging-header [totalCount]="this.totalCount" [pageSize]="this.shopParams.pageSize"
+              [pageNumber]="this.shopParams.pageNumber"></app-paging-header>
             <div class="form-inline mt-2">
               <h5 class="text-warning ml-3">Sort &nbsp;&nbsp;&nbsp;<span> <select class="custom-select"
-                    style="width:250px; color: red;" (change)="onSortSelected($event.target.value)">
+                    style="width:250px; color: orange;" (change)="onSortSelected($event.target.value)">
                     <option *ngFor="let sort of sortOptions" [value]="sort.value">{{sort.name}}</option>
                   </select>
                 </span></h5>
-              <input (keydown)="onSearch()" class="form-control mr-2" #search style="width: 300px;" placeholder="Search Here" type="text">
+              <input (keydown)="onSearch()" class="form-control mr-2" #search style="width: 300px;"
+                placeholder="Search Here" type="text">
               <!-- <button (click)="onSearch()" class="btn btn-outline-primary ml-2 my-2">search</button>
               <button (click)="onReset()" class="btn btn-outline-success ml-2 my-2">reset</button> -->
             </div>
           </div>
         </section>
 
-        <div class="row">
-          <div class="col-md-2" *ngFor="let item of products">
+        <div class="row d-flex">
+          <div class="col-md-2 col-sm-6" *ngFor="let item of products" style="margin-bottom: 0.1%;">
             <app-product-item [product]="item"></app-product-item>
           </div>
         </div>
         <div class="d-flex justify-content-center" *ngIf="this.totalCount !==0" style="margin-top: 20px">
-          <app-pagination [pageSize]="shopParams.pageSize" [totalCount]="totalCount" (pageChanged)="onPageChanged($event)"></app-pagination>
+          <app-pagination [pageSize]="shopParams.pageSize" [totalCount]="totalCount"
+            (pageChanged)="onPageChanged($event)"></app-pagination>
         </div>
       </section>
     </div>

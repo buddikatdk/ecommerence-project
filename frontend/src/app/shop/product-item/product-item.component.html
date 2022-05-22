@@ -1,4 +1,4 @@
-<div class="card shadow-lg p-2">
+<!-- <div class="card shadow-lg p-2">
   <div class="card-body p-1">
     <div class="card">
       <div class="card-img-wrapper">
@@ -6,18 +6,40 @@
           <app-product-image-item [image]="item" *ngIf="item.id === product.id"></app-product-image-item>
         </div>
       <!-- <img *ngIf="!property.Image" id="imageProp" class="card-img-top" src="./assets/images/Homeimage.png"> -->
-        <div class="card-body p-2">
-        <p id="proname">{{product.productName}}</p>
+        <!-- <div class="card-body p-2">
+        <p routerLink="/shop/{{product.id}}" id="proname">{{product.productName}}</p> -->
         <!-- <p id="protype">{{property.Type}}</p> -->
-        <p id="proprice">LKR. {{product.price}} only</p>
+        <!-- <p id="proprice">LKR. {{product.price}} only</p>
           <div class="card-body">
             <ul class="list-inline text-center member-icons">
-              <li class="list-inline-item" style="font-size:1vw;"><button id="btnc" class="btn"><i class="fa fa-shopping-cart"></i> Buy</button></li>
+              <li class="list-inline-item" style="font-size:1vw;"><button id="btnc" class="btn"><i class="fa fa-shopping-cart"></i> Buy</button></li> -->
               <!-- <li class="list-inline-item" style="font-size:1vw;"><button id = "btnc" class="btn" routerLink="/details-property/{{property.Id}}"><i class="fa-solid fa-heart"></i> View</button></li> -->
-            </ul>
+            <!-- </ul>
           </div>
         </div>
       </div>
     </div>
   </div>
-</div>
+</div> -->
+  <div class="single-shop-product">
+      <div class="product-tile">
+          <div class="product-upper" *ngFor="let item of images">
+            <app-product-image-item [image]="item" *ngIf="item.id === product.id"></app-product-image-item>
+              <!-- @*<center><img src="~/Content/Images/@ViewBag.testi[j].image1" id="reimg" height="171" width="171" alt=""></center>*@ -->
+          </div>
+          <div class="product-info">
+              <div class="product_name">
+                  <h2><a id="pname" href="">{{product.productName}}</a></h2>
+              </div>
+              <div class="product-carousel-price">
+                  <ins>Rs. {{product.price}} </ins> <del style="font-size:12px;">Rs. 99.00</del>
+              </div>
+              <h2><span><img src="/assets/images/11Sale.png" height="60%" width="25%" alt="">   </span><mark style="background-color:goldenrod; height:100%; width: 50%; margin-left:3%;">Free Delivery</mark></h2>
+                  <div class="product-option-shop">
+                      <input type="hidden" value="@ViewBag.testp[i].productId" name="pid" />
+                      <input type="hidden" value="1" name="pqty" />
+                      <button class="add_to_cart_button" type="submit" style="color:white; font-size:100%;"><span><img src="/assets/images/shopping_cart_16px.png" />&nbsp;</span>&nbsp;Add to cart</button>
+                  </div>
+          </div>
+      </div>
+  </div>

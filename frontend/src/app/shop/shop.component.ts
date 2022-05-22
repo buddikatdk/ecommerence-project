@@ -3,6 +3,7 @@ import { IProduct } from '../shared/models/product';
 import { ShopService } from './shop.service';
 import { ICategories } from '../shared/models/category';
 import { IBrand } from '../shared/models/brand';
+import { IImage } from '../shared/models/image';
 import { ISubCategory } from '../shared/models/subcategory';
 import { ShopParams } from '../shared/models/shopParams';
 
@@ -17,6 +18,7 @@ export class ShopComponent implements OnInit {
   brands: IBrand[];
   categories: ICategories[];
   subcategories: ISubCategory[];
+  images: IImage[];
   shopParams = new ShopParams();
   totalCount: number;
   sortOptions = [
@@ -98,6 +100,7 @@ this.getProducts();
 this.getBrands();
 this.getCategories();
 this.getSubCategories();
+this.getProductImages();
   }
 
   getProducts()
@@ -134,6 +137,15 @@ this.getSubCategories();
   {
     this.shopService.getSubCategories().subscribe(response => {
       this.subcategories = response;
+    }, error => {
+      console.log(error);
+    });
+  }
+
+  getProductImages()
+  {
+    this.shopService.getProductImages(this.shopParams.productId).subscribe(response => {
+      this.images = response;
     }, error => {
       console.log(error);
     });

@@ -56,20 +56,6 @@ namespace Infrasturcture.Data
                     await context.SaveChangesAsync();
                 }
 
-                if(!context.Images.Any())
-                {
-                    var imagesData = File.ReadAllText("../Infrasturcture/Data/SeedData/images.json");
-
-                    var images = JsonSerializer.Deserialize<List<Images>>(imagesData);
-
-                    foreach(var item in images)
-                    {
-                        context.Images.Add(item);
-                    }
-
-                    await context.SaveChangesAsync();
-                }
-
                 if(!context.Products.Any())
                 {
                     var productsData = File.ReadAllText("../Infrasturcture/Data/SeedData/products.json");
@@ -79,6 +65,20 @@ namespace Infrasturcture.Data
                     foreach(var item in products)
                     {
                         context.Products.Add(item);
+                    }
+
+                    await context.SaveChangesAsync();
+                }
+
+                 if(!context.Images.Any())
+                {
+                    var imagesData = File.ReadAllText("../Infrasturcture/Data/SeedData/images.json");
+
+                    var images = JsonSerializer.Deserialize<List<Images>>(imagesData);
+
+                    foreach(var item in images)
+                    {
+                        context.Images.Add(item);
                     }
 
                     await context.SaveChangesAsync();

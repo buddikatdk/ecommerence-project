@@ -7,6 +7,7 @@ import { IImage } from '../shared/models/image';
 import { delay, map } from 'rxjs/operators';
 import { ISubCategory } from '../shared/models/subcategory';
 import { ShopParams } from '../shared/models/shopParams';
+import { IProduct } from '../shared/models/product';
 
 @Injectable({
   providedIn: 'root',
@@ -69,5 +70,15 @@ export class ShopService {
     return this.http.get<ISubCategory[]>(
       this.baseUrl + 'products/subcategories'
     );
+  }
+
+  getProduct(id: number)
+  {
+    return this.http.get<IProduct>(this.baseUrl + 'products/' +id);
+  }
+
+  getProductImages(id: number)
+  {
+    return this.http.get<IImage[]>(this.baseUrl + 'products/images/' +id);
   }
 }

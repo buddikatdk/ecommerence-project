@@ -13,7 +13,7 @@ namespace Core.Specifications
             AddInculde(x=>x.Product);
         }
 
-        public ImagesWithProductSpecification(int id) : base(x=>x.Id == id)
+        public ImagesWithProductSpecification(int id) : base(x=>x.ProductId == id)
         {
             AddInculde(x=>x.Product);
         }
