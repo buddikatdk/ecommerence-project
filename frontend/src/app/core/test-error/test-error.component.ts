@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { environment } from 'src/environments/environment';
+import { NavigationExtras } from '@angular/router';
 
 @Component({
   selector: 'app-test-error',
@@ -9,6 +10,7 @@ import { environment } from 'src/environments/environment';
 })
 export class TestErrorComponent implements OnInit {
 baseUrl = environment.apiUrl;
+validationErrors : any;
   constructor(private http: HttpClient) {}
 
   ngOnInit(): void {
@@ -43,6 +45,7 @@ baseUrl = environment.apiUrl;
       console.log(response);
     }, error =>{
       console.log(error);
+      this.validationErrors = error.errors;
     });
   }
 }
