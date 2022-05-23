@@ -10,6 +10,8 @@ import { ShopModule } from "src/app/shop/shop.module";
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { HomeModule } from './home/home.module';
 import { ErrorInterceptor } from './core/interceptors/error.interceptor';
+import { NgxSpinnerModule } from 'ngx-spinner'
+import { LoadingInterveptor } from './core/interceptors/loading.interceptor';
 
 @NgModule({
   declarations: [
@@ -23,10 +25,13 @@ import { ErrorInterceptor } from './core/interceptors/error.interceptor';
     HttpClientModule,
     CoreModule,
     NgbModule,
-    HomeModule
+    HomeModule,
+    NgxSpinnerModule
   ],
   providers: [
-    {provide: HTTP_INTERCEPTORS, useClass:ErrorInterceptor, multi:true}
+    {provide: HTTP_INTERCEPTORS, useClass:ErrorInterceptor, multi:true},
+    {provide: HTTP_INTERCEPTORS, useClass:LoadingInterveptor, multi:true}
+
   ],
   bootstrap: [AppComponent]
 })

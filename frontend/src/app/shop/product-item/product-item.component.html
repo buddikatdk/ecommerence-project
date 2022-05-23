@@ -25,7 +25,6 @@
       <div class="product-tile">
           <div class="product-upper" *ngFor="let item of images">
             <app-product-image-item [image]="item" *ngIf="item.id === product.id"></app-product-image-item>
-              <!-- @*<center><img src="~/Content/Images/@ViewBag.testi[j].image1" id="reimg" height="171" width="171" alt=""></center>*@ -->
           </div>
           <div class="product-info">
               <div class="product_name">
