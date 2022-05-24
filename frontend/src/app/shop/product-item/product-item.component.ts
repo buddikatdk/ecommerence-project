@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { CartService } from 'src/app/cart/cart.service';
 import { IImage } from 'src/app/shared/models/image';
 import { IProduct } from 'src/app/shared/models/product';
 import { ProductItemService } from 'src/app/shop/product-item/product-item.service';
@@ -12,7 +13,7 @@ import { ProductItemService } from 'src/app/shop/product-item/product-item.servi
 export class ProductItemComponent implements OnInit {
 @Input() product: IProduct
 images: IImage[];
-  constructor(private productItemService: ProductItemService) { }
+  constructor(private productItemService: ProductItemService,private cartService: CartService) { }
 
   ngOnInit(): void {
 this.getImages();
@@ -27,4 +28,8 @@ this.getImages();
     });
   }
 
+  addItemToCart()
+  {
+    this.cartService.addItemToCart(this.product);
+  }
 }

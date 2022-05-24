@@ -10,8 +10,8 @@
         <a class="nav-link" href="#"><span><i class="fa fa-user mr-2 text-muted"></i></span> My Account</a>
         <a class="nav-link" href="#"><span><i class="fa fa-heart mr-2 text-muted"></i></span> Wishlist</a>
         <a class="nav-link" href="#" style="color: red;"><span><i class="fa fa-stop mr-2"></i></span> Global Store</a>
-        <a class="nav-link" href="#"><span><i class="fa fa-shopping-cart mr-1 text-muted"></i></span> My Cart <span
-            class="badge bg-danger text-white rounded-pill align-text-bottom">5</span></a>
+        <a class="nav-link" routerLink="/cart"><span><i class="fa fa-shopping-cart mr-1 text-muted"></i></span> My Cart <span
+            class="badge bg-danger text-white rounded-pill align-text-bottom" *ngIf="(cart$ | async) as cart">{{cart.items.length}}</span></a>
         <a class="nav-link" href="#"><span><i class="fa fa-user mr-1 text-muted"></i></span> Login</a>
         <a class="nav-link last-inline" href="#" style="float: right; margin-left: auto;">currency :LKR</a>
         <a class="nav-link last-inline" href="#" style="float: right;">language :English</a>

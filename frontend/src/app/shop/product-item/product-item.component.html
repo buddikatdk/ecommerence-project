@@ -37,7 +37,7 @@
                   <div class="product-option-shop">
                       <input type="hidden" value="@ViewBag.testp[i].productId" name="pid" />
                       <input type="hidden" value="1" name="pqty" />
-                      <button class="add_to_cart_button" type="submit" style="color:white; font-size:100%;"><span><img src="/assets/images/shopping_cart_16px.png" />&nbsp;</span>&nbsp;Add to cart</button>
+                      <button (click)="addItemToCart()" class="add_to_cart_button" type="submit" style="color:white; font-size:100%;"><span><img src="/assets/images/shopping_cart_16px.png" />&nbsp;</span>&nbsp;Add to cart</button>
                   </div>
           </div>
       </div>

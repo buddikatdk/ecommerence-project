@@ -1,0 +1,84 @@
+<div class="container mt-2">
+  <div *ngIf="(cart$ | async) === null">
+    <p>no items in basket</p>
+  </div>
+
+  <div *ngIf="cart$ | async">
+    <div class="pb-5">
+      <div class="container">
+        <div class="row">
+          <div class="col-12 py-5 mb-1">
+            <div class="table-responsive">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th scope="col" class="border-0 bg-light">
+                      <div class="py-2 text-uppercase">Product</div>
+                    </th>
+                    <th scope="col" class="border-0 bg-light">
+                      <div class="py-2 text-uppercase"></div>
+                    </th>
+                    <th scope="col" class="border-0 bg-light">
+                      <div class="py-2 text-uppercase">Price</div>
+                    </th>
+                    <th scope="col" class="border-0 bg-light">
+                      <div class="py-2 text-uppercase">Quantity</div>
+                    </th>
+                    <th scope="col" class="border-0 bg-light">
+                      <div class="py-2 text-uppercase">Total</div>
+                    </th>
+                    <th scope="col" class="border-0 bg-light">
+                      <div class="py-2 text-uppercase">Actions</div>
+                    </th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr *ngFor="let item of (cart$ | async).items">
+                    <td>
+                      <div style=" width:90px; max-width: 80%; max-height:50%">
+                        <!-- <img src => -->
+                        <div *ngFor="let imgitem of (image$ | async)">
+                          <app-product-image-item [image]="imgitem" *ngIf="imgitem.productId == item.id"></app-product-image-item>
+                        </div>
+                      </div>
+                    </td>
+                    <td>
+                      <div class="ml-3 d-inline-block align-middle">
+                        <h5 class="mb-0"><a routerLink="/shop/{{item.id}}" class="text-dark"></a>{{item.productName}}</h5>
+                        <span class="text-muted font-weight-normal font-italic d-block">Description : {{item.productDescription}}</span>
+                        <span class="text-muted font-weight-normal font-italic d-block">Category : {{item.subCategory}} &nbsp; Barnd: {{item.brand}}</span>
+                      </div>
+                    </td>
+                    <td class="align-middle"><strong>{{item.price}}</strong></td>
+                    <td class="align-middle">
+                      <i (click)="decrementItemQuantity(item)" class="fa fa-minus-square text-warning me-2" style="cursor:poniter; font-size: 2em;"></i>
+                      <span class="font-weight-bold"style="font-size:1.5em;">{{item.quantity}}</span>
+                      <i (click)="incrementItemQuantity(item)" class="fa fa-plus-square text-warning ms-2" style="cursor:poniter; font-size: 2em;"></i>
+                    </td>
+                    <td class="align-middle"><strong>{{item.price * item.quantity}}</strong></td>
+                    <td class="align-middle tet-center">
+                      <a class="text-danger">
+                        <i (click)="removeCartItem(item)" class="fa fa-trash" style="font-size:2em; cursor: pointer;"></i>
+                      </a>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-6 offset-6">
+            <app-order-totals></app-order-totals>
+            <a routerLink="/checkout" class="btn btn-outline-warning py-2 btn-block" style="width: 100%;">
+              Proceed to Checkout
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+

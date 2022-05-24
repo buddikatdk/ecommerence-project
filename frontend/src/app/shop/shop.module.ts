@@ -8,11 +8,12 @@ import { CarouselComponent } from '../core/carousel/carousel.component';
 import { SharedModule } from '../shared/shared.module';
 import { ProductDetailsComponent } from './product-details/product-details.component';
 import { ShopRoutingModule } from './shop-routing.module';
+import { CartComponent } from '../cart/cart.component';
 
 
 
 @NgModule({
-  declarations: [ShopComponent, ProductItemComponent, ProductImageItemComponent, CarouselComponent, ProductDetailsComponent],
+  declarations: [ShopComponent, ProductItemComponent, ProductImageItemComponent, CarouselComponent, ProductDetailsComponent,CartComponent],
   imports: [
     CommonModule,
     NgbModule,

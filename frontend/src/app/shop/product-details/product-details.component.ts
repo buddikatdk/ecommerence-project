@@ -4,6 +4,7 @@ import { IProduct } from '../../shared/models/product';
 import { ShopService } from '../shop.service';
 import { IImage } from '../../shared/models/image';
 import { BreadcrumbService } from 'xng-breadcrumb';
+import { CartService } from '../../cart/cart.service';
 
 @Component({
   selector: 'app-product-details',
@@ -14,13 +15,32 @@ export class ProductDetailsComponent implements OnInit {
 product: IProduct;
 images: IImage[];
 @Input() image : IImage;
-  constructor(private shopService:ShopService,private activateRoute: ActivatedRoute,private bcService:BreadcrumbService) {
+quantity = 1;
+  constructor(private shopService:ShopService,private activateRoute: ActivatedRoute,private bcService:BreadcrumbService, private cartService:CartService) {
     this.bcService.set('@productDetails','');
    }
 
   ngOnInit(): void {
     this.loadProduct();
     this.loadProductImage();
+  }
+
+  addItemToCart()
+  {
+    this.cartService.addItemToCart(this.product, this.quantity);
+  }
+
+  incrementQuantity()
+  {
+    this.quantity++;
+  }
+
+  decrementQuantity()
+  {
+    if(this.quantity > 1)
+    {
+      this.quantity--;
+    }
   }
 
   loadProduct()
