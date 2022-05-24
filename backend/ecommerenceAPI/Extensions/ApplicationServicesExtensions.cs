@@ -17,6 +17,7 @@ namespace ecommerenceAPI.Extensions
             services.AddScoped<ICategoryRepository, CategoryRepository>();
             services.AddScoped<IImageRepository, ImageRepository>();
             services.AddScoped<IProductRepository, ProductRepository>();
+            services.AddScoped<ICartRepository, CartRepository>();
             services.AddScoped(typeof(IGenericRepository<>),(typeof(GenericRepository<>)));
             services.Configure<ApiBehaviorOptions>(options =>{
                 options.InvalidModelStateResponseFactory = actionContext => 
